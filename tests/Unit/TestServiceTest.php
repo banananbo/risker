@@ -1,0 +1,33 @@
+<?php
+/**
+ * テストケースの書き方サンプル
+ */
+
+namespace Tests\Unit;
+
+use Tests\TestCase;
+use Service\TestService;
+
+class TestServiceTest extends TestCase
+{
+    /**
+     * @var \Service\TestService
+     */
+    private $model;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->model = new TestService();
+    }
+
+    /**
+     * @test
+     */
+    public function test_足し算()
+    {
+        $expected = 2;
+        $actual = $this->model->add(1, 1);
+        $this->assertTrue($expected === $actual);
+    }
+}
