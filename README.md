@@ -17,7 +17,7 @@ TDDとはなにかを体感してもらうためのものです。
 * 8時間程度
 
 ## ディレクトリ構成
-https://readouble.com/laravel/5.5/ja/structure.html
+https://readouble.com/laravel/5.5/ja/structure.html  
 ※serviceディレクトリはこちらで作成しました。
 
 ## cloneしてからやること
@@ -38,7 +38,7 @@ $ ./vendor/bin/phpunit --version
 * [TDDアンチパターン](http://www.hyuki.com/yukiwiki/wiki.cgi?TddAntiPatterns)
 * [php7で堅牢なコードを書く](https://www.youtube.com/watch?v=54jHDHvcYAo)
 
-## お題
+## 課題
 * 前提として、TDD講座でもあったようにまずはテストから書いてください。
 Red→Green→リファクタリングの流れを守るようにしてください。
 
