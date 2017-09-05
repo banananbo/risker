@@ -1,53 +1,86 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# laravel5.5 README
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## 概要
+このリポジトリはlaravel5.5とphpunitを使用してTDDの課題を実際にやってみることで、
+TDDとはなにかを体感してもらうためのものです。
+※TDDとはtest-driven developmentの略でテスト駆動開発の意味
 
-## About Laravel
+## 必要なもの
+* php7以上
+* composer 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## 対象者
+* ユニットテストをやったことがない人
+* TDDをやったことがない人
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 所要時間
+* 8時間程度
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+## ディレクトリ構成
+https://readouble.com/laravel/5.5/ja/structure.html
+※serviceディレクトリはこちらで作成しました。
 
-## Learning Laravel
+## cloneしてからやること
+```
+$ composer install
+$ php -r "file_exists('.env') || copy('.env.example', '.env');"
+$ php artisan key:generate
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+// phpunitがあることを確認する
+// バージョンが6.3であればOK
+$ ./vendor/bin/phpunit --version
+```
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## TDDを始める前に見ておいてほしい参考リンク
+* [laravelのテストのページ](https://readouble.com/laravel/5.5/ja/testing.html)
+* [phpunitのマニュアル](https://phpunit.de/manual/6.3/ja/index.html)
+* [TDD講座](http://gihyo.jp/dev/serial/01/tdd)
+* [TDDアンチパターン](http://www.hyuki.com/yukiwiki/wiki.cgi?TddAntiPatterns)
+* [php7で堅牢なコードを書く](https://www.youtube.com/watch?v=54jHDHvcYAo)
 
-## Laravel Sponsors
+## お題
+* 前提として、TDD講座でもあったようにまずはテストから書いてください。
+Red→Green→リファクタリングの流れを守るようにしてください。
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+* 初級編1-1
+  * 1から100までの値を評価してその数が3の倍数だった時に「fizz」と返し、
+5の倍数だったときは「buzz」と返し、両方に当てはまる場合は「fizzbuzz」と返し、
+上記全てに当てはまらない場合は値をそのまま返すクラスを作成してください。
+※app/もしくはservice/配下にテスト対象クラスを作ってください。
+* 初級編1-2
+  * 上記で作成したものを使って今度は1から100以外の数(x < 1 || 100 < x)の場合は
+「1から100までが有効です。」というメッセージを返すようにしてください。
+  * 上記で作成したものを使って今度は数字以外の場合は
+「数字を入れてください。」というメッセージを返すようにしてください。
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+* 上級編1-1
+  * 自動販売機クラスを作成してもらいます。下記の仕様をみたすように作成してください。
+    * 10円玉、50円玉、100円玉、500円玉、1000円札を１つずつ投入できる。
+    * 投入は複数回できる。
+    * 投入金額の総計を取得できる。
+    * 払い戻し操作を行うと、投入金額の総計を釣り銭として出力する。
+* 上級編1-2
+  * 下記の仕様追加に対応してください。
+    * 想定外のもの（硬貨：１円玉、５円玉。お札：千円札以外のお札）が投入された場合は、投入金額に加算せず、それをそのまま釣り銭としてユーザに出力する。
+* 上級編1-3(責務を持ちすぎていませんか？責任を持ちすぎていたら分割しましょう)
+  * 下記の仕様追加に対応してください。
+    * 値段と名前の属性からなるジュースを１種類格納できる。初期状態で、コーラ（値段:120円、名前”コーラ”）を5本格納している。
+    * 格納されているジュースの情報（値段と名前と在庫）を取得できる。
+* 上級編1-4(責務を持ちすぎていませんか？責任を持ちすぎていたら分割しましょう)
+  * 下記の仕様追加に対応してください。
+    * 投入金額、在庫の点で、コーラが購入できるかどうかを取得できる。
+    * ジュース値段以上の投入金額が投入されている条件下で購入操作を行うと、ジュースの在庫を減らし、売り上げ金額を増やす。
+    * 投入金額が足りない場合もしくは在庫がない場合、購入操作を行っても何もしない。
+    * 現在の売上金額を取得できる。
+    * 払い戻し操作では現在の投入金額からジュース購入金額を引いた釣り銭を出力する。
+* 上級編1-5
+  * 下記の仕様追加に対応してください。
+    * ジュースを3種類管理できるようにする。
+      * 在庫にレッドブル（値段:200円、名前”レッドブル”）5本を追加する。
+      * 在庫に水（値段:100円、名前”水”）5本を追加する。
+    * 投入金額、在庫の点で購入可能なドリンクのリストを取得できる。
+* 上級編1-6
+  * 下記の仕様追加に対応してください。
+    * ジュース値段以上の投入金額が投入されている条件下で購入操作を行うと、釣り銭（投入金額とジュース値段の差分）を出力する。
+      * ジュースと投入金額が同じ場合、つまり、釣り銭0円の場合も、釣り銭0円と出力する。
+      * 釣り銭の硬貨の種類は考慮しなくてよい。
