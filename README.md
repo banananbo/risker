@@ -1,8 +1,8 @@
 # laravel5.5 README
 
 ## 概要
-このリポジトリはlaravel5.5とphpunitを使用してTDDの課題を実際にやってみることで、
-TDDとはなにかを体感してもらうためのものです。
+このリポジトリはlaravel5.5とphpunitを使用してTDDの課題を実際にやってみることで、  
+TDDとはなにかを体感してもらうためのものです。  
 ※TDDとはtest-driven developmentの略でテスト駆動開発の意味
 
 ## 必要なもの
