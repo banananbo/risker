@@ -18,7 +18,7 @@ TDDとはなにかを体感してもらうためのものです。
 
 ## ディレクトリ構成
 https://readouble.com/laravel/5.5/ja/structure.html  
-※serviceディレクトリはこちらで作成しました。
+※app/Serviceディレクトリはこちらで作成しました。
 
 ## cloneしてからやること
 ```
