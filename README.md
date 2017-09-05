@@ -32,6 +32,9 @@ $ ./vendor/bin/phpunit --version
 
 // phpunit実行
 $ vendor/bin/phpunit path/to/file
+
+// 新規作成したクラスがオートロードで読み込まれていない場合
+$ composer dump-autoload
 ```
 
 ## TDDを始める前に見ておいてほしい参考リンク
