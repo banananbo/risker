@@ -3,7 +3,7 @@ declare(strict_types=1);
 /**
  * ユニットテスト用サンプルクラス
  */
-namespace Service;
+namespace App\Service;
 
 class TestService
 {

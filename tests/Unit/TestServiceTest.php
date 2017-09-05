@@ -7,12 +7,12 @@ declare(strict_types=1);
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Service\TestService;
+use App\Service\TestService;
 
 class TestServiceTest extends TestCase
 {
     /**
-     * @var \Service\TestService
+     * @var App\Service\TestService
      */
     private $model;
 
