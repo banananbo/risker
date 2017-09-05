@@ -29,6 +29,9 @@ $ php artisan key:generate
 // phpunitがあることを確認する
 // バージョンが6.3であればOK
 $ ./vendor/bin/phpunit --version
+
+// phpunit実行
+$ vendor/bin/phpunit path/to/file
 ```
 
 ## TDDを始める前に見ておいてほしい参考リンク
